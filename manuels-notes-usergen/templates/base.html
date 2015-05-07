@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Manuels Notes</title>
+  <link rel="stylesheet" href="css/notes.css">
+</head>
+<body>
+<h1>Manuel's Notes</h1>
+  <div class="content">
+    <div class="index_content"><a href="#S5">My Notes for Stage 4: Let anyone Modify</a><br>
+    <a href="#S5S1">Lesson 4.1: Introduction to Networks</a><br>
+    <a href="#S5S2">Lesson 4.2: Make the Internet Work for you</a><br>
+    <a href="#S5S3">Lesson 4.3: Forms</a><br>
+    <a href="#S5S4">Lesson 4.4: Python Break-Modules & Dictionaries</a><br>
+    <a href="#S5S5">Lesson 4.5: Working with App Engine</a><br>
+    <a href="#S5S6">Lesson 4.6: Validation</a><br>
+    <a href="#S5S7">Lesson 4.7: HTML Templates</a><br>
+    <a href="#S5S8">Lesson 4.8: Databases</a></div>
+    <div class="index_content"><a href="#comment">Add a Comment</a></div>
+  </div>
+<h2 id="S5">My Notes for Stage 4</h2>
+    <div class="section">
+      <h3 id="S5S1">Lesson 4.1: Introduction to Networks</h3>
+        <p><img src="images/S4S1MakingANetwork.png" alt="Making a Network"></p>
+        <p>This is how the Greeks send their Messages to their Network and how we will do that in the Internet.</p>
+      <p><img src="images/S4S1LatencyBandwith.png" alt="Difference between Latency and Bandwith"></p>
+      <p>The difference between Latency and Bandwidth is that Latency Measures the time a packet needs to send from the Source to the Destination. Latency would be measured in milliseconds.<br>Bandwidth means the informations that can be transmitted per Unit/Time. Bandwidth would be measured in bits per second.</p> 
+      <p><img src="images/S4S1ProtocolHTTP.png" alt="Protocol HTTP"></p>
+      <p>For Client to Server Communication in the Internet we use the Protocol HTTP. With HTTP you can get Objects from a Server. The Server responds with the ruequested Obejct.</p>
+      <h3 id="S5S2">Lesson 4.2: Make the Internet Work for you</h3>
+      <p>We have an URL (Uniform Ressource Locator) to locate an Server in our Webbrowser. A URL looks like http://www.google.de. HTTP means the Protocol we would send the Request to the Server and www.google.de means the Host that we wan to talk to.<br>You can also use queries in URLs. A query URL looks like http://www.google.de/test?p=foo where the question mark is the start of the query. With http://www.google.de/test?p=foo&i=bar you can initiate more queries within one URL.<br>You can also use Fragments in URLs. We do this with http://www.google.de/test#blah. The Hash Sign starts the Fragment in the URL. Fragements never sent to the Server.</p>
+      <p><img src="images/S5S2URLs.png" alt="URLs"></p>
+      <p>Most HTTP Requests are GET and POST requests. There are other Request Methods but in this class we only need these two Methods.</p>
+      <p><img src="images/S5S2HTTPRequestHeaders.png" alt="HTTP Headers"></p>
+      <p>HTTP Headers are in the Format Name: value. The value could be any value you want.</p>
+      <p><img src="images/S5S2HTTPResponse.png" alt="HTTP Response"></p>
+      <p>If the HTTP Response Status Code starts with 2xx that basically means success.<br>If the Response Status Code starts with 3xx we need to do something differently to find these document.<br>If the Response Code starts with 4xx that means that there is an Error on the Browser Site (e.g. wrong URL).<br>If the Response Code starts with 5xx that means that there is an Error on the Server site.</p>
+      <h3 id="S5S3">Lesson 4.3: Forms</h3>
+      <p>With the from Tag you can build forms on your Webpage. With the input from you can build the fields you want to use as input on you Site.</p>
+      <p><img src="images/S5S3InputTags.png" alt="Input Tags"></p>
+      <h3 id="S5S4">Lesson 4.4: Break-Modules & Dictionaries</h3>
+      <p>The Modules Operator in python is a % Sign.</p>
+      <p><img src="images/S5S4ModulusOperator.png" alt="The Modulus Operator in Python"></p>
+      <p>We have seen in the last Lessions that we can use Strings and Lists in Python. We can also use Dictionaries as a set of key, value pairs. Dictionaries are between {} sign. A Dictionary could be elements = { 'hydrogen': 1, 'helium': 2, 'carbon': 6 }<br>The Order of an Dictionary must not be the same as defined in the Dictionary.</p>
+      <p><img src="images/S5S4Dictionaries.png" alt="Dictionaries in Python"></p>
+      <h3 id="S5S5">Lesson 4.5: Working with App Engine</h3>
+      <p>In Google App Engine the default content-Type is text/html.</p>
+      <h4>GET vs. POST Requests in HTML</h4>
+      <table>
+        <tr>
+          <th>GET</th>
+          <th>POST</th>
+        </tr>
+        <tr>
+          <td>Parameters in URL</td>
+          <td>Parameters in the Body</td>
+        </tr>
+        <tr>
+          <td>Used for fetching documents</td>
+          <td>Used for updating Data on the Server</td>
+        </tr>
+        <tr>
+          <td>Maximum URL length</td>
+          <td>No maximum URL length (e.g. many Megabytes)</td>
+        </tr>
+        <tr>
+          <td>OK to Cache</td>
+          <td>Not OK to Cache</td>
+        </tr>
+        <tr>
+          <td>Should not Change the Server</td>
+          <td>OK to change the Server</td>
+        </tr>
+      </table>
+      <pre><code>given_string = "I think %s is a perfectly normal thing to do in public."
+def sub1(s):
+    print given_string %s
+
+sub1("running") 
+# => "I think running is a perfectly normal thing to do in public."    
+sub1("sleeping") 
+# => "I think sleeping is a perfectly normal thing to do in public."</code></pre>
+      <p>If you want Substitute more than one String you have to define more than one Variable.</p>
+      <pre><code>given_string2 = "I think %s and %s are perfectly normal things to do in public."
+def sub2(s1, s2):
+    print given_string2 %(s1, s2)
+    
+sub2("running", "sleeping") 
+# => "I think running and sleeping are perfectly normal things to do in public."
+sub2("sleeping", "running") 
+# => "I think sleeping and running are perfectly normal things to do in public."</code></pre>
+    <p>You can also give the Substitutes different Names to access it in you string. You do that with %(name)s and then you can access it with %{"name": value}.</p>
+    <pre><code>given_string2 = "I'm %(nickname)s. My real name is %(name)s, but my friends call me %(nickname)s."
+def sub_m(name, nickname):
+    return given_string2 %{"nickname": nickname, "name": name}
+
+print sub_m("Mike", "Goose") 
+# => "I'm Goose. My real name is Mike, but my friends call me Goose."</code></pre>
+      <p>GET Requests should be simple Requests to fetching a Document. The Parameters should describe what Document are you looking for.<br> POST Parameters should be used to update the Server.</p>
+      <h3 id="S5S6">Lesson 4.6: Validation</h3>
+      <p>For validation of User Input we should do the fallowing three points:<br>1.) Verify the Users input<br>2.) On error, render form again<br>3.) Include an error Message.</p>
+      <p><img src="images/S5S5StringSubstitution.png" alt="String Substitution in Python"></p>
+      <p>With String Substitution you can replace a String with the Sigen %s. Then you can call the String with %SOMESTRING when SOMESTRING could also be a Variable</p>
+      <h3 id="S5S7">Lesson 4.7: HTML Templates</h3>
+    <p>Templates are a great way to
+      <li>Seperate different types of code</li>
+      <li>Make more readable code</li>
+      <li>More secure Websites</li>
+      <li>HTML that is easy to modify</li>
+    </p>
+    <p>For Templating there is an Library called jinja2. There are many other Libraries for templating but we use this because it is built in in Google App Engine.<br><a href="http://jinja.pocoo.org">Jinja Website</a></p>
+    <p><img src="images/S5S7VariableSubstitutionJinja.png" alt="Variable Substitution in jinja"></p>
+    <p>You can print Variables in jinaj with {{variable_name}}.</p>
+    <p><img src="images/S5S7StatemeintSyntaxJinja.png" alt="Statement Syntax in jinja"></p>
+    <p><b>Note, "end if" should not have  space. It should be "endif".</b></p>
+    <p><img src="images/S5S7TemplateInheritance.png" alt="Template inheritance"></p>
+   <p><b>Use Template Inheritance:</b> This lets you define a base template which you can later plug new HTML into. This is useful when, for example, you want to have a consistent header and footer across your app.</p>
+    <p><b>Add Repeated Elements:</b> If you've got many divs that all have the same structure, it's much better to use a for loop.</p>
+    <p><b>Add Conditionality:</b> Maybe you only want to add something if something else is true. Jinja let's you use if statements to do this.</p>
+    <h4>Helpful Tips</h4>
+      <li>Always <b>automatically</b> escape variables when possible</li>
+      <li>Minimize code in templates</li>
+      <li>Minimize HTML in Code</li>
+    <h3 id="S5S7">Lesson 4.8: Databases</h3>
+    <p><img src="images/S5S8DatabaseTables.png" alt="Tables in Databases"></p>
+    <p>In Databases we have Tables that stores the Data in. In these Tables there could be many Data inside within many Columns and Rows.</p>
+    <p><img src="images/S5S8TypesOfDatabases.png" alt="Types of Databases"></p>
+    <p>There are many Database Types in the World. Most popular are relational Databases (SQL = Structured Query Language). SQL is used to putting Data in a Database or putting Data from a Database out.</p>
+    <p><img src="images/S5S8SQL.png" alt="SQL"></p>
+    <p><img src="images/S5S8MoreMoreSQL.png" alt="More SQL"></p>
+    <p>You can use the AND and the OR Operator for comparsion.</p>
+    <p><img src="images/S5S8MoreSQL.png" alt="More SQL"></p>
+    <p><img src="images/S5S8Joins.png" alt="Joins"></p>
+    <p><img src="images/S5S8Indexes.png" alt="Indexes"></p>
+    <p>With Indexes you can access any value by a given key. You build Indexes (or Dictionaries) with index[key] = value</p>
+    <p>You can use Indexes for sorting. <b>Hastables</b> could not be sorted, but lookups are faster. <b>Trees</b> can be sorted but the lookups are slower.</p>
+    <h4>ACID</h4>
+    <table>
+      <tr>
+        <th>Automicity</th>
+        <th>Consistency</th>
+        <th>Isolation</th>
+        <th>Durability</th>
+      </tr>
+      <tr>
+        <td>All parts of a <b>transaction</b> suceed or fail together</td>
+        <td>The Database will always be consistent</td>
+        <td>No transactions can interference with others</td>
+        <td>Once the transaction is committed, it won't be lost</td>
+      </tr>
+    </table>
+    <p>For different databases you have different trade offs from the ACID model.</p>
+    <h4>Conclusion Questions</h4>
+    <p><b>1. There's a line of code that says content = ndb.StringProperty(indexed=False). Will you be able to make queries based on content if you use indexed=False?</b><br>Yes you can make queries but they will be slower without an index.</p>
+    <p><b>2. The Guestbook class has a post method, which has lines of code to create a new instance of the Greeting class and set the value of author and content. Why doesn't this code ever set the value of date?</b><br>You don't have to set the value of Date because Date is automatically set to the present, using auto_now_add=True.</p>
+    <p><b>3. The syntax for making datastore queries is slightly different than pure SQL, but very similar. In your locally running version of this guestbook app, add a few entries and notice the order that they display in your browser. Can you get them to display in the opposite order by removing a single character from the code in guestbook.py?</b><br>In Line 92 set (-Post.date) to (+Post.date). Then the Posts appear from the oldest to the newest.</p>
+  </div>
+  <div>
+    <h2 id="comment">Leave your comment</h2>
+    <div>
+      <form action="/sign?wall_name={{wall_name}}" method="post">
+      <textarea name="content" rows="15" cols="180"></textarea><br>
+      <input type="submit" value="Post your comment">
+      </form>
+    </div>
+  </div>
+  <div>
+    <div>
+      <h3>Last {{wall_name}}</h3>
+    {% block content %}{% endblock %}
+    </div>
+    {% if continue_posts %}
+    <div>
+      <h3><a href="/?wall_name={{wall_name}}&continue_posts={{continue_posts}}">Get Next 10 Posts</a></h3>
+    </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

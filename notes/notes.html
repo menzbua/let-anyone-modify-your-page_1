@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manuel's Notes</title>
+	<link rel="stylesheet" type="text/css" href="notes.css">
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<h1>Manuel's Notes</h1>
+	<div class="content">
+		<div class="index_content"><a href="#S1">My Notes for Stage 0: The Basics of the Web and HTML</a></div>
+		<div class="index_content"><a href="#S2">My Notes for Stage 1: Creating a Structured Document with HTML</a><br>
+		<a href="#S2S1">The CSS Selectors</a><br>
+		<a href="#S2S2">Include CSS to your Page</a><br>
+		<a href="#S2S3">The Box Model</a><br>
+		<a href="#S2S4">Code, Test, Refine</a><br></div>
+		<div class="index_content"><a href="#S3">My Notes for Stage 2: Automate your Page</a><br>
+		<a href="#S3S1">Variables and Strings</a><br>
+		<a href="#S3S2">Input -> Function -> Output</a><br>
+		<a href="#S3S3">If and While</a><br>
+		<a href="#S3S4">Lists and For Loops</a><br>
+		<a href="#S3S5">Other Notes for these Session</a></div>
+		<div class="index_content"><a href="#S4">My Notes for Stage 3: The Power of Abstraction</a><br>
+		<a href="#S4S1">Lesson 1: Use Functions</a><br>
+		<a href="#S4S2">Lesson 2a: Use Classes - Draw Turtles</a><br>
+		<a href="#S4S3">Lesson 2b: Use Classes - Send Text</a><br>
+		<a href="#S4S4">Lesson 2c: Use Classes - Profanity Editor</a><br>
+		<a href="#S4S5">Lesson 3a: Make Classes - Movie Website</a><br>
+		<a href="#S4S6">Lesson 3b: Make Classes - Advance Topic</a></div>
+		<div class="index_content"><a href="#S5">My Notes for Stage 4: Let anyone Modify</a><br>
+		<a href="#S5S1">Lesson 4.1: Introduction to Networks</a><br>
+		<a href="#S5S2">Lesson 4.2: Make the Internet Work for you</a><br>
+		<a href="#S5S3">Lesson 4.3: Forms</a><br>
+		<a href="#S5S4">Lesson 4.4: Python Break-Modules & Dictionaries</a><br>
+		<a href="#S5S5">Lesson 4.5: Working with App Engine</a><br>
+		<a href="#S5S6">Lesson 4.6: Validation</a><br>
+		<a href="#S5S7">Lesson 4.7: HTML Templates</a><br>
+		<a href="#S5S8">Lesson 4.8: Databases</a></div>
+	</div>
+	<h2 id="S1">My Notes for Stage 0: The Basics of the Web and HTML</h2>
+	<div class="section">
+		<p>All the Client, Server, Internet Stuff is not new for me because i'm a network guy :-).</p>
+		<p><b>&lt;p&gt;Content&lt;/p&gt;</b> is an <b>HTML Tag</b><br>
+    	<b>&lt;p attribute="value"&gt;Content&lt;/p&gt;</b> is an HTML Tag with an <b>Attribute</b><br>
+    	Some Tags don't need to be closed. These are Void Tags. Example &lt;img&gt;</p>
+    	<p>There are <b>Inline</b> and <b>Block</b> elements.<br>
+    	Inline Elements are just manipulate the written Text.<br>
+    	Block Elements are build an invisible Box thourgh the Element</p>
+    	<p><b>&lt;span&gt;</b> is an <b>inline</b> Element and <b>&lt;div&gt;</b> is a <b>block</b> element.</p>
+ 		<p>Computers are stupid. Write exactly what the Computer understands. Otherwise the Code will not work<br>
+  		<b>Don't forget to close your Tag &lt;/tag&gt;</b></p>
+	</div>
+	<h2 id="S2">My Notes for Stage 2: Creating a Structured Document with HTML</h2>
+	<div class="section">
+		<p>HTML and CSS are both "languages"</p>
+		<p><b>HTML</b> controls the <b>"structure"</b> of a web page.</p>
+		<p><b>CSS</b> controls the <b>"style"</b> of a page (how it looks).</p>
+		<p>When programmers talk about the <b>DOM</b> they are talking about the tree-like structure of a page.<br>
+			Structure means, that every HTML Document looks same from ground up. You have the &lt;html&gt; element on top of the page. Then you have the &lt;head&gt; and &lt;body&gt; element as child elements of &lt;html&gt; and so on.<br>So you have a top element and the structure goes down to one or many child elements. But all begins from the Root element.
+		</p>
+		<p>All HTML Elemets are Rectangle Boxes</p>
+		<p>Always use and Texteditor for special puroposes to make your content. For example use one with Syntax Highlighting.</p>
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">CSS Reference Guide</a>
+	</div>
+	<div class="section">
+		<h3 id="S2S1">The CSS Selectors</h3>
+		<p>You could select by <b>element</b> in CSS Selector. Then you have to use this code for Example.</p>
+			<pre>
+h1 {
+background-color : black;
+color: white;
+}
+			</pre>
+		<p>All h1 Elements would now have the Style as configured</p>
+		<p>You could also Select by <b>class</b>. Then the Style would applied to all Elements with the attribute of the Class. Class selector starts with a ..</p>
+			<pre>
+.headline {
+background-color : black;
+color: white;
+}
+			</pre>
+		<p>Now all Elements with the attribute class="headline" would the Style applied.</p>
+	</div>
+	<div>
+		<h3 id="S2S2">Include CSS to your Page</h3>
+		<h4>Method 1: write CSS in the &lt;head&gt; of your HTML</h4>
+		<pre>
+&lt;head&gt;
+  &lt;style&gt;
+    div {
+      background-color : red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+		</pre>
+		<h4>Method 2: Link your HTML to a separate CSS file</h4>
+		<p>There you have to specifiy a seperate CSS File in your HTML File header.<br>If the CSS File is not in the same folder you have to specify the Path to the File.</p>
+		<pre>
+&lt;head&gt;
+   &lt;link rel="stylesheet" type="text/css" href="main.css"&gt;
+&lt;/head&gt;
+		</pre>
+		<h4>Method 3: Write your style inline with your HTML</h4>
+		<p>You should not do this because you have to do this for every Element again. Your code base will grow very strong. This means repetition of Code.</p>
+		<pre>
+&lt;div style="background-color: red; color: white"&gt;
+		</pre>
+	</div>
+    <div class="section">
+	    <h3 id="S2S3">The Box Model</h3>
+	    <p>You have in the Box Model four different Types of Borders. The types are <b>Content, Padding, Border and Margin</b>. All Boxes has <b>seperate properties</b>. You can calcualte the Box Size in pixels (px) or in percents.</p>
+	    <p>If you want to calcualte the Width of the Boxes Padding and Border together, you have to use these CSS Options.</p>
+		<pre>
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+box-sizing: border-box;
+		</pre>
+		<p>As div elements are Block elements, by default they use the entire width of a page. With the CSS Attribute <b>flex</b> you can Change the Box ordering on the Page. In this <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Guide</a> is the Flexbox Attribute explained.</p>
+    </div>
+    <div class="section">
+	    <h3 id="S2S4">Code, Test, Refine</h3>
+		    <p>1. Look for natural boxes<br>
+		    2. Look for repeated styles & semantic elements<br>
+		    3. Write your HTML<br>
+		    4. Apply Styles (from BIGGEST to smallest)<br>
+		    5. Fix things</p>
+	    <a href="http://validator.w3.org/#validate_by_input">To verfiy HTML Code</a><br>
+	    <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">To verify CSS Code</a>
+    </div>
+    <h2 id="S3">My Note for Stage 2: Automate your Page</h2>
+    <div class="section">
+	    <p><a href="attachments/unit1-notes.pdf" target="_blank">Stage 2: Udacity cs101: Building a Search Engine</a></p>
+	    <p><b>Five Points thinking like a Programmer:</b><br>1. Procedural Thinking<br>2. Abstract Thinking<br>3. Systems Thinking<br>4. Technological Empathy<br>5. Debugging</p>
+	    <p><b>The Backus-Naur Form</b></p>
+	    <p><img src="images/S2S1BackusNaurFrom.png" alt="Backus-Naur Form"></p>
+	    <p>The Backus-Naur From gives a Grammar help for Computer Languages. In the Screenshot you see all Violet Words are Non-Terminal. These Non-Terminals are not finished and you have to go further.</p>
+	    <a href="http://de.wikipedia.org/wiki/Backus-Naur-Form">Wikipedia Link</a>
+	    <p><b>Computer</b><br>A Computer is a device that executes a program. He can execute it really fast and without breaks.</p>
+	    <p><b>Program</b><br>A program describes a very precise sequence of steps. Since the computer is just a machine, the program must give the steps in a way that can be executed mechanically. That is, the program can be followed without any thought.</p>
+	    <p><b>Programming Languages, Interpreter, Python</b><br>There are many Programming Languages out there. Python is an interpreted Language. That means the we write the Code in Python syntax and this Code would be interpreted by an Python Interpreter in Computer Code. The Python interpreter reads our programs and executes them by following the rules of the Python language.<br>
+Not interpreted Languages must be compiled in Computer Code before they can be executed on the Computer</p>
+		<p><b>Grammar</b><br>We need an exact Grammar for Computer Languages because the syntax must be exact for the Computer otherwise the code would not be understood.<br>In natural Languages make sentences that are not complete grammatical but people understand it.</p>
+		<p><b>Python Expressions</b></p>
+		<p><img src="images/S2S1PythonExpressions.png" alt="Python Expression"></p>
+		<p>If you want an Integer expression you only have to use Integer Numbers. If you want your Expression in decimal you need to put a decimal pointer after the Number (for Example 5.9 or 6.7).</p>
+    </div>
+    <div>
+	    <h3 id="S3S1">Vaiables and Strings</h3>
+	    <h4>What is a variable?</h4>
+	    <h4>What does it mean to assigna value to a variable?</h4>
+	    <h4>What is the difference between what the equals = means in math versus programming. What's the differeence between this: 2 + 2 = 5 and this: my_variable = 5?</h4>
+	    <p>A variable is a name refers to a value. In Python, we can use any sequence of letters and numbers and underscores (_) we want to make a variable name, so long as it does not start with a number.</p>
+	    <p>Assign Variables in Python:</p>
+		    <pre><code>Name = Expression
+speed_of_light = 299792458</code></pre>
+	    <p>In Math equal Sign means equal, in programming it means assignment. You could see the equal sign as an arrow in Programming.</p>
+	    <p><img src="images/S2S2VariablesEqualMeans.png" alt="What Eqal means in Programming"></p>
+	    <h4>How to declare Strings in Python</h4>
+	    <p><img src="images/S2S2Strings.png" alt="Strings"></p>
+		<p>Strings has always to be closed with the same Quotiation Marks (single and double) as started. You can use the other type of marks in the String.<br>It is importent that the Python interpreter interprets a String only if there are quotation marks. If they not there then the interpretor means there is a number now.</p>
+		<p>To put two Strings together in Python you have to use the concatenation with + Sign. It is different meaning as it is used on numbers.</p>
+		<p><img src="images/S2S2StringsConcatenation.png" alt="String Concatenation in Python"></p>
+		<h4>String Indexing in Python</h4>
+		<p>When you want to select sub-sequences from a string, it is called indexing. Use the square brackets
+[] to specify which part of the string you want to select.</p>
+		<p><img src="images/S2S2StingsIndexing.png" alt="String Indexing in Python"></p>
+		<h4>String Sub Sequences in Python</h4>
+		<p>You can select a sub-sequence of a string by designating a starting position and an end position. Python reads the characters positions starting at 0, so that if we consider the string 'udacity' that has 7 characters, there are 6 positions with 'u' being in the 0 position.</p>
+		<p><img	src="images/S2S2StringsSubSequences.png" alt="String Sub Sequences in Python"></p>
+		<h4>Find Strings</h4>
+		<p>The find method is a built in operation, or method, provided by Python, that operates on strings.
+The output of find is the position of the string where the specified sub-string is found.</p>
+		<p><img src="images/S2S2StringsFind.png" alt="Find Strings"></p>
+		<p>Here some Examples using find method in Python:</p>
+		<pre><code>pythagoras = 'There is geometry in the humming of the strings, there is music in the spacing of the spheres. '
+print pythagoras.find('string')
+40
+print pythagoras[40:]
+strings, there is music in the spacing of the spheres.
+print pythagoras.find('T')
+0
+print pythagoras.find('sphere')
+86
+print pythagoras[86:]
+spheres
+print pythagoras.find('algebra')
+-1</code></pre>
+    </div>
+    <div>
+	    <h3 id="S3S2">Input -> Function -> Output</h3>
+	    <p>How to Use Functions (Procedures) in Python.</p>
+	    <p><img src="images/S2S3UsingFunctions.png" alt="Using Functions (Procedures) in Python"></p>
+	    <p>You get a String (s) as Input to the Function. The Interpreter evaluates the String and returns it with the result.</p>
+	    <p>You make Functions with def &lt;function name&gt;.<br> Functions are made by starting a line of code with the keyword def and then giving a function name followed by the function parameters in parentheses. These parameters will eventually be replaced by actual values when the function is used (called).<br>In the "body" of the function, we write the code that specifies what to do with the input parameters. For example the following code could be the definition of a function called square:</p>
+	    <pre><code>def square(x):
+	answer = x * x
+	return answer</code></pre>
+	    <p>To use a function, we write the name of the function followed by the value(s) we want to give it in parentheses. Like this:</p>
+	    <pre><code>print square(4)
+	>>>16</code></pre>
+	    <p>If a function has <b>no return statement</b> Python returns the Keyword <b>None</b>.</p>
+	    <p>Use triple quotes <b>"""Some multiline Text"""</b> to create mulit-line strings in Python.</p>
+	    <p>First automated Python Page Tags:</p>
+	    <pre><code>def title(title_string)
+	return '&lt;h4&gt;' + title_string + '&lt;/h4&gt;'
+def description(description_string):
+	return '&lt;p&gt;' + description_string + '&lt;/p&gt;'
+print title('My first Python Title')
+print description('My first Python Auto generated Webpage')</code></pre>
+	    <h4>My first Python Title</h4>
+		<p>My first Python Auto generated Webpage</p>
+    </div>
+    <div>
+	    <h3 id="S3S3">If and While</h3>
+	    <p>In Equality Comparsion you have many Operators to use. Here some examples:</p>
+		    <table>
+			    <tr>
+			    	<td class="table_tab">&lt;</td>
+			    	<td>value is lower than</td>
+			    </tr>
+			    <tr>
+					<td class="table_tab">&gt;</td>
+					<td>value is greater than</td>
+				</tr>
+				<tr>
+					<td class="table_tab">!=</td>
+					<td>value is not the same than</td>
+				</tr>
+				<tr>
+					<td class="table_tab">==</td>
+					<td>value is the same than</td>
+				</tr>
+		    </table>
+		<p>You have to use double = for this Operation because one = defines a Variable.</p>
+		<p><b>If Loops</b></p>
+		<p><img src="images/S3S3DefineIFStatement.png" alt="Defin a IF Statement in Python"></p>
+		<p>OR Operator in Python</p>
+		<p><img src="images/S3S3Or.png" alt="OR in Python"></p>
+		<p>OR Operator only evaluates what he needs to. After first true in OR Operation he stops to evaluate to further expressions.</p>
+		<p>Flow Chart about Quiz biggest</p>
+		<p><img	src="images/S3S3QuizFlowChart.png" alt="Quiz Flow Chart"></p>
+		<p><b>While Loops</b></p>
+		<p><img src="images/S3S3WhileLoops.png" alt="While Loops in Python"></p>
+		<p>While Loops always executes the Block while the Test Expression is true. If the Test Expression is false, the while Loop ends. While Loops can keep going forever.</p>
+		<p>You can also Stop while Loops with the break statement.</p>
+		<p><img src="images/S3S3BreakWhileLoops.png" alt="Break While Loops in Python"></p>
+		<p style="margin-top: 25px; margin-bottom: 25px"><b>You can write every Computerprogram with:<br>
+			Arithmentic<br>
+			Comparsions<br>
+			Procedures<br>
+			if Statements</b></p>
+    </div>
+	<div>
+		<h3 id="S3S4">Lists and For Loops</h3>
+		<p><a href="attachments/UdacityCS101Unit3StructuredData.pdf">Udacity CS101: Building a Search Engine Unit 3: Data</a></p>
+		<p><img src="images/S3S4Lists.png" alt="Lists in Python"></p>
+		<p>The difference between Lists and Strings is that you can store in a <b>List a sequence of anything</b>. In a String you can only store characters. A List is <b>comma separated in Square Brackets</b>. This looks very similar to Strings but it has another behavior.</p>
+		<p>Here some Codeexamples for Lists in Python:</p>
+		<pre><code>
+print "EXAMPLE 1: Lists can contain strings"
+string_list = ['HTML', 'CSS', 'Python']
+print string_list
+
+print "EXAMPLE 2: Lists can contain numbers"
+number_list = [3.14159, 2.71828, 1.61803]
+print number_list
+
+print "EXAMPLE 3: Lists can be 'accessed' and 'sliced' like how we accessed and sliced strings in the previous lessons"
+pi = number_list[0]
+not_pi = number_list[1:]
+print pi
+print not_pi
+
+print "EXAMPLE 4: Lists can contain strings AND numbers"
+mixed_list = ['Hello!', 42, "Goodbye!"]
+print mixed_list
+
+print "Example 5: Lists can even contain other lists"
+list_with_lists = [3, 'colors:', ['red', 'green', 'blue'], 'your favorite?']
+print list_with_lists
+		</code></pre>
+		<p>You can also have <b>Nested Lists</b>. That means that you have a List in a List. Here is an Example of Nested Lists:</p>
+		<pre><code>beatles = [['John', 1940], ['Paul', 1942],
+	  ['George', 1943], ['Ringo', 1940]</code></pre>
+		<p>You can select a List with print beatles[1]. Then you got an output of ['Paul', 1942]. But you can also select an Element in a Nested List with print beatles[1][0]. There you got the Result Paul.</p>
+		<p><img src="images/S3S4Mutation.png" alt="Mutation in Python"></p>
+		<p>With Mutation you can change a value in a list. In the Example we Change the Value 0 = H with an Y after assignig it to the posiotion 0 in the List. In normal Strings you have to change to complete String with a new one not only one value.</p>
+		<p><img src="images/S3S4Mutation2.png" alt="Refering to Variables"></p>
+		<p>It is possible that two Variables reference to the same list. If you change one (e.g. q) the changes are made on both Variables because both are referencing the same list. This is called Aliasing.</p>
+		<p><img src="images/S3S4Aliasing.png" alt="Aliasing of Variables"></p>
+		<p>All states are the same until you give the Variable a new state.</p>
+		<p><img src="images/S3S4ListOperationsAppend.png" alt="List Operations Append"></p>
+		<p>With the Method append you can add a value to the End of a List. There would not be created a new list, the append method adds the value to the existing list. If you want to add a list with append you it would be added as one element. That means in the result, you have a List in a List as you see in the Example below.</p>
+		<p><img src="images/S3S4ListOperationsAppend2.png" alt="List Operations Append"></p>
+		<p>With Plus Operations you can concatenate two Lists to one list.<br> With the len Function you can count the Values in the List.</p>
+		<p><img	src="images/S3S4ListOperationsPlusandLength.png" alt="List Operations Plus and Length"></p>
+		<p><b>For Loops</b></p>
+		<p><img src="images/S3S4ForLoops.png" alt="For Loops in Python"></p>
+		<p>With for Loops you can go through lists and evaluate every element in the List. The for Loops iterates as long as you have Elements in the input list. A List in the List is one Element as in the len Function.</p>
+		<p><img src="images/S3S4IndexInNotIn.png" alt="Methods for Indexing"></p>
+		<p>Investigating adding and appending to lists.</p>
+		<table>
+			<tr>
+			   	<td class="table_tab">+</td>
+			   	<td>When you use the + method, you append one or more values to the List. You can list + [5] and you get a list [1,2,3,4,5]. You can list + [5,6,7,8] and you get a list [1,2,3,4,5,6,7,8]. All these Operations generate a new List (new Object).</td>
+			</tr>
+			<tr>
+				<td class="table_tab">append</td>
+				<td>When you use the append method, you append one single value to the List. When you append more values then one, then you append a List in the List. You can list.append(5) and you get a list [1,2,3,4,5]. You can list.append([5,6,7,8]) and you get a list [1,2,3,4[5,6,7,8]]. But all these Operations will be done in a mutable List. No new Object would be generated.</td>
+			</tr>
+			<tr>
+				<td class="table_tab">+=</td>
+				<td>When you use the += method, you append one or more values to the List. You can list += [5] and you get a list [1,2,3,4,5]. You can list += [5,6,7,8] and you get a list [1,2,3,4,5,6,7,8]. When you do list += [6,7,8] and list += [5] you got a list [1,2,3,4,6,7,8,5]. But all these Operations will be done in a mutable List. No new Object would be generated.</td>
+			</tr>
+		</table>
+		<p><b>Final Code for Stage 2</b></p>
+		<iframe src="http://pastebin.com/embed_iframe.php?i=tGvwhphY" style="border:none;width:100%;height:500px"></iframe>
+		<h3 id="S3S5">Other Notes for this Stage</h3>
+		<p><b>Mutable</b> means that we can change the current object in place. We do not need to assign the variable to a new object in Python. Lists are mutable objects because we can mutate the list and not have to assign our variable a new object to take up memory in our computer.</p>		
+	</div>
+    <h2 id="S4">My Notes for Stage 3: The Power of Abstraction</h2>
+    <div class="section">
+		<h3 id="S4S1">Lesson 1: Use Functions</h3>
+		<p>In the Python Standard Library you have many Modules that comes directly with the Python installations. In these <b>Modules</b> are <b>Functions</b> defined for using. A Module is for example the webbrowser Module. We use the Function open from the webbrowser Module to open a Browser Link in our Code for "Planning a break" webbrowser.open().</p>
+		<p><img src="images/S3S1StandardLibrary.png" alt="Python Standard Library"></p>
+		<p>Details about these functions are hidden. These called <b>Abstraction</b> in Programming.</p> 
+		<p><a href="https://docs.python.org/2.7/library/index.html">Python Standard Library Documentation</a></p>
+    </div>
+    <div class="section">
+	    <h3 id="S4S2">Lesson 2a: Use Classes</h3>
+	    <p>A class Turtle, much like a blueprint, contains certain pieces of information about a turtle: the turtle's size, its color, the fact that the Turtle can move forward..."<br>
+It would be more accurate to say that the class Turtle indicates the fact that it has a size and a color. Individual instances of the Turtle will contain information about their sizes and their colors.</p>
+		<p><img src="images/S3S2WhatisaClass.png" alt="What is a Class"></p>
+		<p>You can not give the Class the Properties of the Informations. You have to give the size of Turtle and the Color of Turtle in the instance of the Class.<br>When you initate a class there would be memory reserved on the Computer for the instances. This is one difference to a function. There would be always run the init function in the Class to do that.</p>
+		<p><img src="images/S3S2ClassInit.png" alt="Class function Initiate"></p>
+    </div>
+    <div class="section">
+	    <h3 id="S4S3">Lesson 2b: Use Classes - Send Text</h3>
+	    <p>A Class a container of functions. You have to initialize a class and then you can use all functions that are defined in the class. You can not use the functions without initializing the Class.<br>You got an Instance or Object of a Class after initializing the Class. After that memory would be reserved for the Object. With the Object of a Class you can use all the functions that a Class provides. You do not have to use all functions that a class provides. You only use that functions you need for your program.</p>
+	    <p><img src="images/S3S2ObjectsofClasses.png" alt="Objects of Classes"></p>
+	    <p><img	src="images/S3S2ObjectsofClasses2.png" alt="Objects of Classes"></p>
+    </div>
+    <div class="section">
+	    <h3 id="S4S4">Lesson 2c: Use Classes - Profanity Editor</h3>
+	    <p><img	src="images/S3S2Whatopendoes.png" alt="What open does in Python"></p>
+	    <p>Open is a Built in Function in the Python Standard Library. In the Documentation there is a explantation that open returns an Object of a File. But we did not see the init Function and we did not see the Class open. You have to look deeper in Python Code to see that open runs an init Function.</p>
+    </div>
+    <div>
+	    <h3 id="S4S5">Lesson 3a: Make Classes - Movie Website</h3>
+	    <p><b>Class:</b><br>A Class is a Blueprint. In this Blueprint all Functions defined. You can Build Instances or Objects of this Blueprint to use the Functions in this Class.</p>
+	    <p><b>Instance:</b><br>A Instance is something we build from a Class. For Example the if we have a Building Class we build an Instance of a green Building named bigbuilding. We can create those instances or Objects with bigbuilding = &lt;ClassName&gt;.&lt;function&gt;().</p>
+	    <p><b>Constructor:</b><br> When we build the new Instance or Object of a Class there will be executed a Function named init. This function creates Space in Memory for the new Object.</p>
+	    <p><b>Self:</b><br>When you define the __init__ function you refer to self. Self is the object being created. This refers to the Object or Instance you create in your Code. In my upper example self would be bigbuilding. Self is not a Python Keyword you can use any Word you want. But Self is convention that is used by most Python Programmers. The Codeline is def __init___(self)</p>
+	    <p><b>Instance Variables:</b><br><img class="full_image" src="images/S3S3InstanceVariables.png" alt="Instance Variables in Python"><br>Every Instance have there uniqe copy of Variables. In the Example toy_story has there own Variables and avatar has also there own Variables.</p>
+	    <p><b>Instance Method:</b><br>A function that is defined inside a Class and is associacted with an Instance. Each Instance Method (or Instance Function) takes the first argument as self. So you define a Instance Method with def show_trailer(self):.</p>
+	    <h4>These are the fundamental vocabulary of object-oriented programming. Here is a Picture for Remember:</h4>
+		<p><img class="full_image" src="images/S3S3RecapOOP.png" alt="Object Oriented Programming vocabular"><br>
+		    <a href="https://www.youtube.com/watch?t=54&v=11G5sBkY9tQ" target="_blank">YouTube Video of this Lesson</a>
+	    </p>
+	    <h4>Other nodes for thes Lesson</h4>
+	    <p>How to write a Class Code:</p>
+	    <pre><code>class Movie():
+	def __init__(self, movie_title, movie_storyline, poster_image, trailer_youtube):
+		self.title = movie_title
+		self.storyline = movie_storyline
+		self.poster_image_url = poster_image
+		self.trailer_youtube_url = trailer_youtube
+	    </code></pre>
+	    <p>Use this Class in Python Code:</p>
+	    <pre><code>import media
+
+toy_story = media.Movie("Toy Story", 
+			"A story of y boy and his toys that come to life", 
+			"http://www.impawards.com/1995/posters/toy_story_ver1.jpg",
+			"https://www.youtube.com/watch?v=KYz2wyBy3kc")
+
+print(toy_story.poster_image_url)</code></pre>
+		<p>What happens Behind the Scenes:</p>
+		<p><img class="full_image" src="images/S3S3WhatHappensBehindTheScenes.png" alt="What Happens Behind the Scenes"></p>
+		<p>When we initialize the avatar instance the __init__ function gets called. After that all values would be assigned to the appropriate Variables. All these Variables are Instance Variables.</p>
+	    <p>When you see a function in Python Code that looks like __init__ with the two underlines at beginning and the end of the function you have to know that this is a reserved function Name in python.</p>
+    </div>
+    <div>
+	    <h3 id="S4S6">Lesson 3b: Make Classes - Advanced Topic</h3>
+	    <p><b>Class Variables</b> are available for a Class. That means that the Variable is accessible for every Instance of these Class. When you define a Constant Class Variable the Styleguide for Python says that you name the Variable all in Caps VARIABLE_NAME.</p>
+	    <p>In Python you have some predefined Class Attributes (or Variables).</p>
+	    <table>
+		    <tr>
+		    	<th>Attribute</th>
+				<th>Type</th>
+				<th>Read/Write</th>
+				<th>Descirption</th>
+	    	</tr>
+			<tr>
+		    	<td>__dict__</td>
+				<td>dictionary</td>
+				<td>R/W</td>
+				<td>The class name Space</td>
+	    	</tr>
+	    	<tr>
+		    	<td>__name__</td>
+		    	<td>string</td>
+		    	<td>R/O</td>
+		    	<td>The name of the class</td>
+	    	</tr>
+	    	<tr>
+		    	<td>__bases__</td>
+		    	<td>tuple of class</td>
+		    	<td>R/O</td>
+		    	<td>The classes from wich this class inherits</td>
+	    	</tr>
+	    	<tr>
+		    	<td>__doc__</td>
+		    	<td>string OR None</td>
+		    	<td>R/W</td>
+		    	<td>The class documentation string</td>
+	    	</tr>
+	    	<tr>
+		    	<td>__module__</td>
+		    	<td>string</td>
+		    	<td>R/W</td>
+		    	<td>The name of the module in wich this class was defined</td>
+	    	</tr>
+	    </table>
+	    <a href="http://www2.lib.uchicago.edu/keith/courses/python/class/5/" target="_blank">Documentation on pre-defined variables</a>
+	    <p>With <b>Inheritance</b> you can inherit Class definitions to Child Classes. As in the Screenshot below i have a Parent Class with some class functions and the Class Constructor. With the Class Child i inherit the Class Parents functions and variables to the Class Child.<br>With <b>Method Overriding</b> you can use the same function name in a Child Class as in the Parent Class. Then you use the Function as you build you object.</p>
+	    <p><img	src="images/S3S4Inheritance.png" alt="Inheritance in Python"></p>
+    </div>
+    <h2 id="S5">My Notes for Stage 4</h2>
+    <div class="section">
+	    <h3 id="S5S1">Lesson 4.1: Introduction to Networks</h3>
+   	    <p><img src="images/S4S1MakingANetwork.png" alt="Making a Network"></p>
+   	    <p>This is how the Greeks send their Messages to their Network and how we will do that in the Internet.</p>
+	    <p><img src="images/S4S1LatencyBandwith.png" alt="Difference between Latency and Bandwith"></p>
+	    <p>The difference between Latency and Bandwidth is that Latency Measures the time a packet needs to send from the Source to the Destination. Latency would be measured in milliseconds.<br>Bandwidth means the informations that can be transmitted per Unit/Time. Bandwidth would be measured in bits per second.</p> 
+	    <p><img src="images/S4S1ProtocolHTTP.png" alt="Protocol HTTP"></p>
+	    <p>For Client to Server Communication in the Internet we use the Protocol HTTP. With HTTP you can get Objects from a Server. The Server responds with the ruequested Obejct.</p>
+	    <h3 id="S5S2">Lesson 4.2: Make the Internet Work for you</h3>
+	    <p>We have an URL (Uniform Ressource Locator) to locate an Server in our Webbrowser. A URL looks like http://www.google.de. HTTP means the Protocol we would send the Request to the Server and www.google.de means the Host that we wan to talk to.<br>You can also use queries in URLs. A query URL looks like http://www.google.de/test?p=foo where the question mark is the start of the query. With http://www.google.de/test?p=foo&i=bar you can initiate more queries within one URL.<br>You can also use Fragments in URLs. We do this with http://www.google.de/test#blah. The Hash Sign starts the Fragment in the URL. Fragements never sent to the Server.</p>
+	    <p><img src="images/S5S2URLs.png" alt="URLs"></p>
+	    <p>Most HTTP Requests are GET and POST requests. There are other Request Methods but in this class we only need these two Methods.</p>
+	    <p><img	src="images/S5S2HTTPRequestHeaders.png" alt="HTTP Headers"></p>
+	    <p>HTTP Headers are in the Format Name: value. The value could be any value you want.</p>
+	    <p><img src="images/S5S2HTTPResponse.png" alt="HTTP Response"></p>
+	    <p>If the HTTP Response Status Code starts with 2xx that basically means success.<br>If the Response Status Code starts with 3xx we need to do something differently to find these document.<br>If the Response Code starts with 4xx that means that there is an Error on the Browser Site (e.g. wrong URL).<br>If the Response Code starts with 5xx that means that there is an Error on the Server site.</p>
+	    <h3 id="S5S3">Lesson 4.3: Forms</h3>
+	    <p>With the from Tag you can build forms on your Webpage. With the input from you can build the fields you want to use as input on you Site.</p>
+	    <p><img src="images/S5S3InputTags.png" alt="Input Tags"></p>
+	    <h3 id="S5S4">Lesson 4.4: Break-Modules & Dictionaries</h3>
+	    <p>The Modules Operator in python is a % Sign.</p>
+	    <p><img	src="images/S5S4ModulusOperator.png" alt="The Modulus Operator in Python"></p>
+	    <p>We have seen in the last Lessions that we can use Strings and Lists in Python. We can also use Dictionaries as a set of key, value pairs. Dictionaries are between {} sign. A Dictionary could be elements = { 'hydrogen': 1, 'helium': 2, 'carbon': 6 }<br>The Order of an Dictionary must not be the same as defined in the Dictionary.</p>
+	    <p><img	src="images/S5S4Dictionaries.png" alt="Dictionaries in Python"></p>
+	    <h3 id="S5S5">Lesson 4.5: Working with App Engine</h3>
+	    <p>In Google App Engine the default content-Type is text/html.</p>
+	    <h4>GET vs. POST Requests in HTML</h4>
+	    <table>
+		    <tr>
+			    <th>GET</th>
+			    <th>POST</th>
+		    </tr>
+		    <tr>
+			    <td>Parameters in URL</td>
+			    <td>Parameters in the Body</td>
+		    </tr>
+		    <tr>
+			    <td>Used for fetching documents</td>
+			    <td>Used for updating Data on the Server</td>
+		    </tr>
+		    <tr>
+			    <td>Maximum URL length</td>
+			    <td>No maximum URL length (e.g. many Megabytes)</td>
+		    </tr>
+		    <tr>
+			    <td>OK to Cache</td>
+			    <td>Not OK to Cache</td>
+		    </tr>
+		    <tr>
+			    <td>Should not Change the Server</td>
+			    <td>OK to change the Server</td>
+		    </tr>
+	    </table>
+	    <p>GET Requests should be simple Requests to fetching a Document. The Parameters should describe what Document are you looking for.<br> POST Parameters should be used to update the Server.</p>
+	    <h3 id="S5S6">Lesson 4.6: Validation</h3>
+	    <p>For validation of User Input we should do the fallowing three points:<br>1.) Verify the Users input<br>2.) On error, render form again<br>3.) Include an error Message.</p>
+	    <p><img src="images/S5S5StringSubstitution.png" alt="String Substitution in Python"></p>
+	    <p>With String Substitution you can replace a String with the Sigen %s. Then you can call the String with %SOMESTRING when SOMESTRING could also be a Variable</p>
+	    <pre><code>given_string = "I think %s is a perfectly normal thing to do in public."
+def sub1(s):
+    print given_string %s
+
+sub1("running") 
+# => "I think running is a perfectly normal thing to do in public."    
+sub1("sleeping") 
+# => "I think sleeping is a perfectly normal thing to do in public."</code></pre>
+	    <p>If you want Substitute more than one String you have to define more than one Variable.</p>
+	    <pre><code>given_string2 = "I think %s and %s are perfectly normal things to do in public."
+def sub2(s1, s2):
+    print given_string2 %(s1, s2)
+    
+sub2("running", "sleeping") 
+# => "I think running and sleeping are perfectly normal things to do in public."
+sub2("sleeping", "running") 
+# => "I think sleeping and running are perfectly normal things to do in public."</code></pre>
+		<p>You can also give the Substitutes different Names to access it in you string. You do that with %(name)s and then you can access it with %{"name": value}.</p>
+		<pre><code>given_string2 = "I'm %(nickname)s. My real name is %(name)s, but my friends call me %(nickname)s."
+def sub_m(name, nickname):
+    return given_string2 %{"nickname": nickname, "name": name}
+
+print sub_m("Mike", "Goose") 
+# => "I'm Goose. My real name is Mike, but my friends call me Goose."</code></pre>
+		<h3 id="S5S7">Lesson 4.7: HTML Templates</h3>
+		<p>Templates are a great way to
+			<li>Seperate different types of code</li>
+			<li>Make more readable code</li>
+			<li>More secure Websites</li>
+			<li>HTML that is easy to modify</li>
+		</p>
+		<p>For Templating there is an Library called jinja2. There are many other Libraries for templating but we use this because it is built in in Google App Engine.<br><a href="http://jinja.pocoo.org">Jinja Website</a></p>
+		<p><img src="images/S5S7VariableSubstitutionJinja.png" alt="Variable Substitution in jinja"></p>
+		<p>You can print Variables in jinaj with {{variable_name}}.</p>
+		<p><img	src="images/S5S7StatemeintSyntaxJinja.png" alt="Statement Syntax in jinja"></p>
+		<p><b>Note, "end if" should not have  space. It should be "endif".</b></p>
+		<p><img	src="images/S5S7TemplateInheritance.png" alt="Template inheritance"></p>
+		<p>You can define in you Base File a Code Block that comes from any Template File you want. Do this with just two lines in the Base file and in the Template file. In you Base file you import the "content" of an other File with the Statements:</p>
+		<pre><code>{% block content %}
+{% endblock %}</pre></code>
+		<p>And on the "content" File you have to day wich content you want to import:</p>
+		<pre><code>{% extends "base.html" %}
+{% block content %}
+
+Any Content you want to import to the Base File
+
+{% endblock %}</code></pre>
+		<p><b>Use Template Inheritance:</b> This lets you define a base template which you can later plug new HTML into. This is useful when, for example, you want to have a consistent header and footer across your app.</p>
+		<p><b>Add Repeated Elements:</b> If you've got many divs that all have the same structure, it's much better to use a for loop.</p>
+		<p><b>Add Conditionality:</b> Maybe you only want to add something if something else is true. Jinja let's you use if statements to do this.</p>
+		<h4>Helpful Tips</h4>
+			<li>Always <b>automatically</b> escape variables when possible</li>
+			<li>Minimize code in templates</li>
+			<li>Minimize HTML in Code</li>
+		<h3 id="S5S7">Lesson 4.8: Databases</h3>
+		<p><img src="images/S5S8DatabaseTables.png" alt="Tables in Databases"></p>
+		<p>In Databases we have Tables that stores the Data in. In these Tables there could be many Data inside within many Columns and Rows.</p>
+		<p><img src="images/S5S8TypesOfDatabases.png" alt="Types of Databases"></p>
+		<p>There are many Database Types in the World. Most popular are relational Databases (SQL = Structured Query Language). SQL is used to putting Data in a Database or putting Data from a Database out.</p>
+		<p><img src="images/S5S8SQL.png" alt="SQL"></p>
+		<p><img src="images/S5S8MoreMoreSQL.png" alt="More SQL"></p>
+		<p>You can use the AND and the OR Operator for comparsion.</p>
+		<p><img	src="images/S5S8MoreSQL.png" alt="More SQL"></p>
+		<p><img	src="images/S5S8Joins.png" alt="Joins"></p>
+		<p><img src="images/S5S8Indexes.png" alt="Indexes"></p>
+		<p>With Indexes you can access any value by a given key. You build Indexes (or Dictionaries) with index[key] = value</p>
+		<p>You can use Indexes for sorting. <b>Hastables</b> could not be sorted, but lookups are faster. <b>Trees</b> can be sorted but the lookups are slower.</p>
+		<h4>ACID</h4>
+		<table>
+			<tr>
+				<th>Automicity</th>
+				<th>Consistency</th>
+				<th>Isolation</th>
+				<th>Durability</th>
+			</tr>
+			<tr>
+				<td>All parts of a <b>transaction</b> suceed or fail together</td>
+				<td>The Database will always be consistent</td>
+				<td>No transactions can interference with others</td>
+				<td>Once the transaction is committed, it won't be lost</td>
+			</tr>
+		</table>
+		<p>For different databases you have different trade offs from the ACID model.</p>
+		<h4>Conclusion Questions</h4>
+		<p><b>1. There's a line of code that says content = ndb.StringProperty(indexed=False). Will you be able to make queries based on content if you use indexed=False?</b><br>Yes you can make queries but they will be slower without an index.</p>
+		<p><b>2. The Guestbook class has a post method, which has lines of code to create a new instance of the Greeting class and set the value of author and content. Why doesn't this code ever set the value of date?</b><br>You don't have to set the value of Date because Date is automatically set to the present, using auto_now_add=True.</p>
+		<p><b>3. The syntax for making datastore queries is slightly different than pure SQL, but very similar. In your locally running version of this guestbook app, add a few entries and notice the order that they display in your browser. Can you get them to display in the opposite order by removing a single character from the code in guestbook.py?</b><br>In Line 92 set (-Post.date) to (+Post.date). Then the Posts appear from the oldest to the newest.</p>
+	</div>
+	<div>
+		<h2>Other Helpful Links an Notations</h2>
+		<a href="http://www.inf-schule.de/programmierung/imperativeprogrammierung/konzepteimp/datenstrukturen/exkurs_listenundtupel" target="_blank">Difference between Tuple and Lists in Python</a>
+    <div class="footer"></div>
+    </body>
+</html>
